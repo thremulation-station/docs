@@ -21,7 +21,6 @@ Let's kick the process off by installing the required software for your host pla
 
 === "macOS"
       
-      <br>
       We have used macOS for the lion's share of the development and testing of the project (and currently provides the most validated experience).
 
       1. Ensure you have the [Homebrew](https://brew.sh/) package manager, which is used for all subsequent installs
@@ -44,7 +43,6 @@ Let's kick the process off by installing the required software for your host pla
       1. Install Vagrant: PS> `choco install -y vagrant`
       1. When politely asked to, ___reboot your machine___!
       1. Install Vagrant plugins: PS> `vagrant plugin install vagrant-disksize vagrant-vbguest`
-      <br>
       
       > **Note:** Vagrant requires a restart as part of the installation!.
 
