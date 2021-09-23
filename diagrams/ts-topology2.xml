@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2021-02-09T20:27:42.236Z" agent="5.0 (Macintosh)" version="14.3.0" etag="MG68MrkefNCFviEC72IL" type="device">
+  <diagram id="ZIAijl-LdyQvvXMw9Fwv">
+    <mxGraphModel dx="1633" dy="1022" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry y="130" width="880" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.laptop;" vertex="1" parent="1">
+          <mxGeometry x="345" y="10" width="160.35" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="400" y="200" width="200" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#36393d;fillColor=#66B2FF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="240" width="160" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#36393d;fillColor=#E68A8A;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="160" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="ATTACK" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="251" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="200" width="200" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;div&gt;DETECT&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="260" y="250" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="- Powershell&lt;div align=&quot;left&quot;&gt;- Atomic Red Team&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Caldera&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="250" width="140" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;div align=&quot;left&quot;&gt;- Elasticsearch&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Kibana&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Elastic Security&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="250" width="140" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#333333;fillColor=#f5f5f5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;h2&gt;Elastomic&lt;/h2&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="210" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;h2&gt;Windows10&lt;/h2&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="210" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;h2&gt;Centos&lt;/h2&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="210" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/vagrant-128.png;strokeColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="530" y="26" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/128/VirtualBox.png;strokeColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="270" y="22" width="58" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Private (Virtualbox NAT) Network" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="192.168.33.10" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="105" y="530" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="192.168.33.11" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="405" y="530" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="192.168.33.12" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="645" y="530" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;div align=&quot;left&quot;&gt;- Elastic Agent&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Winlogbeat&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Full Updates&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Sysmon&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- RDP Access&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- WinRM Access&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="240" width="140" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="- Auditbeat&lt;br&gt;- Auditd&lt;br&gt;- Filebeat&lt;br&gt;- Cockpit&lt;br&gt;- Nginx&lt;br&gt;- Rsyslog&lt;br&gt;- Samba" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="670" y="245" width="140" height="230" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

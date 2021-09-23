@@ -1,0 +1,1396 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Local Elastic Static Security Testing">
+      
+      
+      
+        <meta name="author" content="Thremulation Station">
+      
+      
+        <link rel="canonical" href="https://thremulation.io/tool-usage/caldera-usage/">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
+    
+    
+      
+        <title>Caldera Usage - Thremulation Station</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.92558b1b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="blue-grey">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#caldera-basic-usage-lab" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Thremulation Station" class="md-header__button md-logo" aria-label="Thremulation Station" data-md-component="logo">
+      
+  <img src="../../images/purple-lappy.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thremulation Station
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Caldera Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/thremulation-station/thremulation-station/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/overview/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/installation/" class="md-tabs__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Tool Usage
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../support/" class="md-tabs__link">
+        Support & Reference
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Thremulation Station" class="md-nav__button md-logo" aria-label="Thremulation Station" data-md-component="logo">
+      
+  <img src="../../images/purple-lappy.png" alt="logo">
+
+    </a>
+    Thremulation Station
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/thremulation-station/thremulation-station/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribution/" class="md-nav__link">
+        Contribution
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        About
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/machine-details/" class="md-nav__link">
+        Machine Details
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Quickstart
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Quickstart" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstart
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/deployment/" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/initial-access/" class="md-nav__link">
+        Initial Access
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/functions-check/" class="md-nav__link">
+        Functions Check
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Tool Usage
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tool Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tool Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Caldera Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Caldera Usage
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goals" class="md-nav__link">
+    Goals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-reqs" class="md-nav__link">
+    Pre-Reqs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup" class="md-nav__link">
+    Startup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents" class="md-nav__link">
+    Agents
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beacon-timer" class="md-nav__link">
+    Beacon Timer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watchdog-timer" class="md-nav__link">
+    Watchdog Timer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#untrusted-timer" class="md-nav__link">
+    Untrusted Timer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implant-name" class="md-nav__link">
+    Implant Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap-ability" class="md-nav__link">
+    Bootstrap Ability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adversaries" class="md-nav__link">
+    Adversaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up" class="md-nav__link">
+    Clean Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thrunting" class="md-nav__link">
+    Thrunting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Support & Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Support & Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Support & Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/stationctl/" class="md-nav__link">
+        Station Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/reference/" class="md-nav__link">
+        External Reference
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goals" class="md-nav__link">
+    Goals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-reqs" class="md-nav__link">
+    Pre-Reqs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup" class="md-nav__link">
+    Startup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agents" class="md-nav__link">
+    Agents
+  </a>
+  
+    <nav class="md-nav" aria-label="Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beacon-timer" class="md-nav__link">
+    Beacon Timer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watchdog-timer" class="md-nav__link">
+    Watchdog Timer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#untrusted-timer" class="md-nav__link">
+    Untrusted Timer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implant-name" class="md-nav__link">
+    Implant Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap-ability" class="md-nav__link">
+    Bootstrap Ability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adversaries" class="md-nav__link">
+    Adversaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up" class="md-nav__link">
+    Clean Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thrunting" class="md-nav__link">
+    Thrunting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/thremulation-station/thremulation-station/edit/master/docs/tool-usage/caldera-usage.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="caldera-basic-usage-lab">Caldera Basic Usage Lab</h1>
+<h3 id="goals">Goals</h3>
+<p>At the end of this lab you will be able to:</p>
+<ol>
+<li>Startup the Caldera server</li>
+<li>Understand and use the Caldera interface</li>
+<li>Configure and deploy a Caldera agent to a “victim” host 4. View and create adversary profiles</li>
+<li>Create and run an operation</li>
+<li>Hunt for operation activity in Kibana</li>
+</ol>
+<h3 id="pre-reqs">Pre-Reqs</h3>
+<p>Let's get set up for this lab:</p>
+<ol>
+<li>
+<p>Vagrant up the elastomic and windows10 box:</p>
+<ul>
+<li><code>vagrant up ts.elastomic ts.windows10</code></li>
+</ul>
+</li>
+<li>
+<p>Establish an RDP session with the windows10 box with the RDPclient of your choice, with the following data:</p>
+<div class="highlight"><pre><span></span><code>host:192.168.33.11
+user:vagrant
+pass:vagrant
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h2 id="startup">Startup</h2>
+<p>Caldera comes pre-installed on the elastomic host, and is located in the /home/vagrant directory. In order to utilize it you only need to start up the Caldera server, so let’s do that.</p>
+<ol>
+<li>
+<p>First ssh into the elastomic box with the following command: <code>vagrant ssh ts.elastomic</code></p>
+</li>
+<li>
+<p>Once you are ssh’d into elastomic, move into the Caldera directory: <code>cd caldera</code></p>
+</li>
+<li>
+<p>Start up the Caldera server by running: <code>python3 server.py — insecure</code></p>
+</li>
+<li>
+<p>The server startup will take at most 30 seconds, after which we can validate by pointing your local browser to <code>http://localhost:8888</code>. You should see the following:</p>
+</li>
+</ol>
+<p align="center">
+<img src="../../images/caldera-1.png">
+</p>
+<p><br></p>
+<h2 id="interface">Interface</h2>
+<ul>
+<li>Now that we have our server running hosted locally, we can login and take a look around</li>
+<li>Default credentials for your Caldera server are: <code>admin:admin</code></li>
+<li>After successfully logging in you should see the Caldera welcome page</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-2.png">
+</p>
+<p><br></p>
+<ul>
+<li>Click on the hamburger menu next to navigate in the top left corner to dis play the different options Caldera provides</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-3.png">
+</p>
+<p><br></p>
+<ul>
+<li>The primary menu options you will be concerned with are the Agents, Adversaries, and Operations sections.</li>
+</ul>
+<h2 id="agents">Agents</h2>
+<ul>
+<li>We will start with the agents tab, so go ahead and click it</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-4.png">
+</p>
+<p><br></p>
+<ul>
+<li>This tab allows us to configure, create, and deploy an agent on one of our “victim” boxes that will communicate back to our Caldera server where we can run our operations from.</li>
+<li>Before we create our agent, lets explore some of the up front configuration options we have available</li>
+</ul>
+<h4 id="beacon-timer">Beacon Timer</h4>
+<p>Beacon timer allows you to specify how long your agent will wait to check in and send back data. By default, these values are set to 30 and 60 which is fine. You may want to change these if you are emulating a specific adversary, or just trying to remain undetected from any hunting the defender may be doing.</p>
+<p align="center">
+<img src="../../images/caldera-5.png">
+</p>
+<p><br></p>
+<h4 id="watchdog-timer">Watchdog Timer</h4>
+<p>Watchdog timer lets you set the number of seconds to wait once the server is unreachable, before killing an agent.</p>
+<p align="center">
+<img src="../../images/caldera-6.png">
+</p>
+<p><br></p>
+<h4 id="untrusted-timer">Untrusted Timer</h4>
+<p>Untrusted timer sets the number of seconds to wait before marking a missing agent as untrusted.</p>
+<p align="center">
+<img src="../../images/caldera-7.png">
+</p>
+<p><br></p>
+<h4 id="implant-name">Implant Name</h4>
+<p>The base name of newly-spawned agents. If necessary, an extension will be added when an agent is created e.g splunkd will become splunkd.exe when spawning an agent on a Windows machine.</p>
+<p align="center">
+<img src="../../images/caldera-8.png">
+</p>
+<p><br></p>
+<h4 id="bootstrap-ability">Bootstrap Ability</h4>
+<p>Bootstrap ability is a comma-separated list of ability IDs to be run on a new agent beacon. By default, this is set to run a command which clears command history.</p>
+<p align="center">
+<img src="../../images/caldera-9.png">
+</p>
+<p><br></p>
+<ul>
+<li>Now that we understand the available configuration options, lets go ahead and generate a new agent for us to deploy to our windows10 box</li>
+<li>We are going to use the default values for this test, so go ahead and choose “click here to deploy an agent” button and you will see the following option</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-10.png">
+</p>
+<p><br></p>
+<ul>
+<li>If you click the dropdown for “Choose an agent” you will see anumber of options</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-11.png">
+</p>
+<p><br></p>
+<ul>
+<li>Each of these agents provide a brief description</li>
+<li>The only two I have tested are "54ndc47" and "Manxagents"</li>
+<li>For general purposes, use the 54ndc47 agent as it was developed directly for use with Caldera</li>
+<li>Choose the 54ndc47 agent and select the “Allplatforms” dropdown to choose your OS</li>
+<li>For this lab, we will choose windows for our windows10 host</li>
+<li>For the app.contact.http field,  you will supply the ip or url of your Caldera server: <code>192.168.33.10:8888</code></li>
+<li>Caldera generates a Powershell command to download and execute the Caldera GoLang agent on your windows10 host</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-12.png">
+</p>
+<p><br></p>
+<ul>
+<li>Copy that command in full and lets go over to our windows10 RDP session</li>
+<li>Open a Powershell prompt as administrator</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-13.png">
+</p>
+<p><br></p>
+<ul>
+<li>Now, paste yourCaldera agent Powershell one-liner and hit enter to download and execute the agent</li>
+<li>Once this is done, we can go back to our Caldera server GUI</li>
+<li>Click the "x" in the top right corner of the agent selection box you were in, and you should now see an agent has checked into the Caldera server</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-14.png">
+</p>
+<p><br></p>
+<ul>
+<li>Before we move on to emulating adversary activity, let's explore some of the information the agent provides us</li>
+<li>
+<p>As you can see if gives a uniqueagent id, the host, protocol, agent, process id, and if the agent is running in a privileged context or not.</p>
+</li>
+<li>
+<p>But if we click on the green process id, we can see a lot more details</p>
+</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-15.png">
+</p>
+<p><br></p>
+<ul>
+<li>We have a much more detailed view of our agent to include parent process id, location of our executable, and the user we are running as</li>
+<li>Wealsoaregiventheabilitytoeditcertainfieldsdenotedby*andkill our agent</li>
+<li>Nowclickthexinthetoprighttoleavethisview</li>
+</ul>
+<h2 id="adversaries">Adversaries</h2>
+<ul>
+<li>Select the hamburger menu in the top left of your screen and click the adversaries tab which will open and drop you down to the following screen</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-16.png">
+</p>
+<p><br></p>
+<ul>
+<li>As you can see the adversaries tab, allows us to create our own custom profile (adversary) or view the profiles already created within Caldera</li>
+<li>Let's take a look at a pre-made adversary profile so we can explore what makes up a profile</li>
+<li>Click the “Select an existing profile” dropdown and select the Enumerator profile</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-17.png">
+</p>
+<p><br></p>
+<ul>
+<li>Enumerator is the name of the profile</li>
+<li>Enumerate Processes in all theways is a description of the profile</li>
+<li>Beneath ordering you can see the choose TTPs and in what order they are to be executed</li>
+<li>These are the basic building blocks of an adversary</li>
+<li>Lets look at what one of these TTPs looks like up close</li>
+<li>Click on the WMIC Process Enumeration block, andyoushouldseethe following screen</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-18.png">
+</p>
+<p><br></p>
+<ul>
+<li>We can see everything about this specific TTP: unique id, name, description, tactic, technique id, and technique name.</li>
+<li>Below the generic information, you can see what platform it is compatible with and what is being utilized to execute this technique</li>
+<li>Scroll down further and you will see the command that is being executed, along with a cleanup command and timeout value</li>
+<li>Now, click the "x" in the top right corner of the screen and we will create our own profile to execute on our “victim”</li>
+<li>Under profiles, change the slider from "view" to "add"</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-19.png">
+</p>
+<p><br></p>
+<ul>
+<li>I’m going to use the profile name of "Test" but you can use whatever name you like</li>
+<li>Next, I will fill out a clear description e.g. “a set of TTPs for displaying Caldera’s functionality”</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-20.png">
+</p>
+<p><br></p>
+<ul>
+<li>Let's add some abilities to our profile</li>
+<li>Click the +add ability selector on the right side of your screen, which will pop up a familiar menu</li>
+<li>Let's select a TTP: discovery tactic, T1007 System Service Discovery, and Discover System Services ability</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-21.png">
+</p>
+<p><br></p>
+<ul>
+<li>If you scroll down, you will see the command being run is the Powershell cmdlet <code>Get-Service</code> executed by Powershell as evidenced by the psh executor</li>
+<li>Click the green add to adversary button in the bottom left of the screen to add this TTP to our profile</li>
+<li>You can see we now have added this TTP as the first step in our attack</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-22.png">
+</p>
+<p><br></p>
+<ul>
+<li>I’ve added a second attack ability -- you can add as many as you wish, but for my purposes here this will be fine</li>
+<li>Save this profile and move on to executing it with our agent on the windows10 box</li>
+<li>Once saved, you will see "Adversary Saved"!</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-23.png">
+</p>
+<p><br></p>
+<h2 id="operations">Operations</h2>
+<ul>
+<li>Scroll up and click the hamburger menu in the top left of the Caldera interface, and select the Operations tab to display the following screen:</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-24.png">
+</p>
+<p><br></p>
+<ul>
+<li>There are currently no operations created, so clicking the“Operations” dropdown will not display anything... so let's create our own operation</li>
+<li>Click the slider to change it from view to add</li>
+<li>This allows you to specify a number of options in order to configure your operation successfully</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-25.png">
+</p>
+<p><br></p>
+<ul>
+<li>I will name it "Operation Test"</li>
+<li>Click Basic Options and we'll cover what this provides:</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-26.png">
+</p>
+<p><br></p>
+<ul>
+<li>The first dropdown sets your group and by default all agents are added to the “red” group which is what I have selected</li>
+<li>The second dropdown sets the profile you would like this operation to run. I have selected the Test profile I created earlier</li>
+<li>The third dropdown sets the option to close this operation orleave it open for future execution. I have set this to auto close since this is a lab</li>
+<li>The last dropdown sets the operation to run immediately after starting, or pausing for you to inspect it. I have set it run immediately</li>
+<li>Click Basic Options to close it and click Autonomous</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-27.png">
+</p>
+<p><br></p>
+<ul>
+<li>The first dropdown sets the operation to run autonomously or manually with approval of each TTP executed</li>
+<li>The second dropdown sets which planner you will utilize to execute the operation. A planner is a module within CALDERA which contains logic for how a running operation should make decisions about abilities to use and in what order</li>
+<li>The final dropdown sets the facts you will use during the operation. A fact is an identifiable piece of information about a given computer. Facts are directly related to variables, which can be used inside abilities</li>
+<li>Now click "Autonomous" to close it and click on "Stealth"</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-28.png">
+</p>
+<p><br></p>
+<ul>
+<li>The only dropdown here allows for you to select a number of obfuscation techniques to obscure the commands you run on the host system</li>
+<li>The second field sets the jittervalue. Agents normally check in with CALDERA every 60 seconds. Once they realize they are part of an active operation, agents will start checking in according to the jitter time, which is by default 2/8. This fraction tells the agents that they should pause between 2 and 8 seconds (picked at random each time an agent checks in) before using the next ability</li>
+<li>The visibility slider lets you set how stealthy your operation will remain. How visible should the operation be to the defense. This defaults to 51 because each ability defaults to a visibility of 50. Abilities with a higher visibility than the operation visibility will be skipped</li>
+<li>Click Stealth to close it</li>
+<li>Don’t click Schedule. Schedule allows for scheduling this operation for a later time, which we will not be doing in this lab</li>
+<li>Now click start to begin you roperation and select include agent output</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-29.png">
+</p>
+<p><br></p>
+<ul>
+<li>There is a lot here, but much of it is self-explanatory</li>
+<li>The first option to note is the ability at the top of the screen to stop, pause, play, and skip the operation</li>
+<li>Another option is the ability at any time to switch your operation from an autonomous to a manual one</li>
+<li>Now we can see that our Discover System Services ability was executed on the host and since we enabled the inclusion of agent output if we can click the star at the end of the ability line we should be able to see the output from the command</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-30.png">
+</p>
+<p><br></p>
+<ul>
+<li>Click the x in the top right corner to return to the operation screen</li>
+<li>Congratulations!! You have successfully deployed an agent, created an adversary profile, created an operation and run that profile against a host.</li>
+<li>Now, let's cleanup up the range environment</li>
+</ul>
+<h2 id="clean-up">Clean Up</h2>
+<ul>
+<li>Normally you might want to save all operations and profiles you create, but in this instance we'll get rid of them so you can start fresh</li>
+<li>First, we will delete this operation. Go ahead and click the green delete button located under download report which will revert your screen back to the original operations screen</li>
+<li>Next, click the x in the top left corner of the operations tab to remove it from your interface</li>
+<li>You should now be on the profiles tab which you can do the same thing in. Click the green delete profile button, click ok and then the red x in the top left hand corner</li>
+<li>For the final piece, lets kill our agent and remove it from the agents tab</li>
+<li>Click the green agent PID and select kill agent then select ok</li>
+<li>Wait for the agent PID to turn red or refresh the Caldera browser tab and go back to the agents tab. This may take a minute or two depending on the agents configuration</li>
+<li>Once the agent shows as terminated, click the red x at the end of it to remove it from your view and you are all cleaned up....aside from one thing. The windows box.</li>
+<li>If you want to ensure a clean windows box you can use the stationctl management menu to perform a soft reset and revert the windows box back to a clean instance taken upon deployment</li>
+</ul>
+<h2 id="thrunting">Thrunting</h2>
+<ul>
+<li>Now lets switch over to our Kibana session and go to the Discover tab. Select the <code>logs-*</code> index</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-31.png">
+</p>
+<p><br></p>
+<ul>
+<li>
+<p>The best way to view the activity we conducted on our host is to filter down the data to just want we want to see in this case I want to see process creation events and I want to display the user, parent process name, executing process name and command line.</p>
+</li>
+<li>
+<p>Since the agent we used was named "Splunkd", filtering down the wanted activity will be easy.</p>
+</li>
+</ul>
+<p align="center">
+<img src="../../images/caldera-32.png">
+</p>
+<p><br></p>
+<p>Let's walk through what's been done here:  </p>
+<ul>
+<li>
+<p>I've filtered the data set using the winlog channel field which contains the different event subscriptions we have available to us. Since we want a specific windows event ID, I chose the Security channel.</p>
+</li>
+<li>
+<p>I then wanted to specify the process creation event id of 4688, which I did by utilizing the event.code field.</p>
+</li>
+<li>
+<p>Lastly, I knew the name of my implant was Splunkd so I filtered on the parent process name field to specify the Splunkd process name</p>
+</li>
+<li>
+<p>To view the specific fields I wanted to see, I can simply search for the field names on the left hand side and added them to my table</p>
+</li>
+<li>
+<p>As you can see, we have this Splunkd.exe spawning Powershell.exe as the user vagrant on the windows10 host to run the Get-Service command</p>
+</li>
+<li>
+<p>There are a number of different detections we could write for this, but that is a lab for another day.</p>
+</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>Hopefully this lab helped you gain a basic understand of Caldera, how a C2 framework works and how to hunt the activity Caldera conducts using Kibana.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../support/" class="md-footer__link md-footer__link--next" aria-label="Next: Home" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Home
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      
+    
+  </body>
+</html>
