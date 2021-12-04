@@ -20,15 +20,11 @@ To put threat emulation in layman’s terms, it’s “ethical hacking” — a 
 
 The premise of red teaming is comparable to the old sports saying, "the best offense is a good defense." Red teaming helps defenders learn about new adversary techniques.
 
-To provide threat emulation, we have used Red Canary's open source project, [Atomic Red Team](https://atomicredteam.io) and MITRE's [CALDERA](https://github.com/mitre/caldera) project.
+To provide threat emulation, we are using Prelude Operator: https://www.prelude.org/
 
 
-### Atomic Red
-Atomic Red Team is a library of simple tests that every security team can execute to test their defenses. Tests are focused, have few dependencies, and are defined in a structured format that can be used by automation frameworks.
-
-
-### Caldera
-CALDERA™ is a cyber security framework designed to easily run autonomous breach-and-simulation exercises. It can also be used to run manual red-team engagements or automated incident response.
+### Prelude Operator
+Preldue Operator has a library of simple tests that every security team can execute to test their defenses. Tests are focused, have few dependencies, and are defined in a structured format that can be used by automation frameworks. Additionally, Operator can take advantage of other libraries of TTP's such as Atomic Red Team. If you/your team is taking advantage of Pro TTP's you may sign in with your account for Prelude as well to get additional functionality. 
 
 
 ## Threat Logging & Detection

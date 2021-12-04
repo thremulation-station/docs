@@ -1,10 +1,10 @@
 # Community
 
 ## Discord
-There are several ways to connect with the project community whether that's for support, contributing content, or just learning from other infosec nerds. The primary method should be [Discord](https://discord.gg/mtNXN4QjHh)!
+There are several ways to connect with the project community whether that's for support, contributing content, or just learning from other infosec nerds. The primary method should be [Slack](https://join.slack.com/t/thremulation-station/shared_invite/zt-urwtghsh-GyJp8ENYQgtDQAP0JhcbRw)!
 
 !!! info "Info"
-    Discord server invite URL [https://discord.gg/mtNXN4QjHh](https://discord.gg/mtNXN4QjHh)
+    Discord server invite URL [https://join.slack.com/t/thremulation-station/shared_invite/zt-urwtghsh-GyJp8ENYQgtDQAP0JhcbRw](https://join.slack.com/t/thremulation-station/shared_invite/zt-urwtghsh-GyJp8ENYQgtDQAP0JhcbRw)
 
 
 ## Getting Connected

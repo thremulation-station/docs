@@ -35,8 +35,7 @@ There are a lot of tools and moving pieces, but the main building blocks are:
 - Elasticsearch
 - Kibana
 - Elastic Endpoint Agent
-- Atomic Red Team
-- Caldera
+- Prelude Operator
 
 
 ## Project Goals

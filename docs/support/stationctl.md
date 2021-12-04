@@ -63,6 +63,7 @@ This menu will see some heavy use, and it's broken down into 2 sections:
 ### Data Reset and Troubleshooting
 
 6. Clear Data - _delete data in all indexes_
-7. Soft Reset - _revert to original snapshots_
-8. Hard Reset - _destroy all vms_
-9. Nuke and Pave - _destroy all vms and boxes_
+7. Clear Alerts - _delete all open signals in the siem index_
+8. Soft Reset - _revert to original snapshots_
+9. Hard Reset - _destroy all vms_
+10. Nuke and Pave - _destroy all vms and boxes_
