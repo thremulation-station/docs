@@ -24,7 +24,7 @@ To provide threat emulation, we are using Prelude Operator: https://www.prelude.
 
 
 ### Prelude Operator
-Preldue Operator has a library of simple tests that every security team can execute to test their defenses. Tests are focused, have few dependencies, and are defined in a structured format that can be used by automation frameworks. Additionally, Operator can take advantage of other libraries of TTP's such as Atomic Red Team. If you/your team is taking advantage of Pro TTP's you may sign in with your account for Prelude as well to get additional functionality. 
+Prelude Operator has a library of simple tests that every security team can execute to test their defenses. Tests are focused, have few dependencies, and are defined in a structured format that can be used by automation frameworks. Additionally, Operator can take advantage of other libraries of TTP's such as Atomic Red Team. If you/your team is taking advantage of Pro TTP's you may sign in with your account for Prelude as well to get additional functionality. 
 
 
 ## Threat Logging & Detection
