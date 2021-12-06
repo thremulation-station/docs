@@ -15,15 +15,18 @@ Bottom line: this project should provide a usable range on a _relatively modern_
 
 The listing of resources allocated to each virtual machine are listed below (note that virtual cpus == threads):
 
-- Elastomic:
+- Elastic:
     - virtual memory = `4G`
     - virtual cpus = `2`
-- Elastomic:
+- Windows:
     - virtual memory = `2G`
     - virtual cpus = `2`
-- Elastomic:
+- Centos7:
     - virtual memory = `1G`
     - virtual cpus = `1`
+- Redops
+    - virtual memory = `2G`
+    - virtual cpus = `2G`
 
  These values are certainly tunable, but this is a good starting point. All details can be found in the [Vagrantfile](https://github.com/thremulation-station/thremulation-station/blob/devel/vagrant/Vagrantfile).
 

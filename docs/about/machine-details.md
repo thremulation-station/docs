@@ -1,14 +1,14 @@
 # Node Details
 This section provices details on each node and what surface area is available. So just what is going on on each virtual machine?
 
-## Elastomic
-The "`elastomic`" node is the first and only _required_ node, and is the crux of the entire project. It's essentially a "Purple Teaming" control box that is used to **both** _execute attacks and capture logs of those attacks_.
+## Elastic
+The "`elastic`" node is the first and only _required_ node, and is the crux of the entire project. It's essentially a SIEM that is used to capture logs of attacks carried out by the red box `redops`.
 
 #### Features
 
 * Elasticsearch
 * Kibana
-* Atomic Redteam UI
+* Prelude Operator UI
 * Powershell
 
 #### Enabled Services
@@ -59,5 +59,20 @@ The intent of the `ts.centos7` box is emulate hosting the typical services hoste
 * Nginx
 * Rsyslog
 * Samba
+
+## Redops
+
+The intent of the redops box is a Red Team box that is used to execute attacks against the victim machines.
+
+#### Features
+
+* Built from Debian 11 ISO
+* One user `vagrant`
+* All updates applied during build process
+* Includes VM guest additions
+
+#### Enabled Services
+
+* Prelude Operator
 
 > More details on the usage of each tool can be found in the [Tool Usage Section](https://docs.thremulation.io/tool-usage/).

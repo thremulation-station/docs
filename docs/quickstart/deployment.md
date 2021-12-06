@@ -18,7 +18,7 @@ Thremulation Station comes with a terminal control interface called `stationctl`
 - check the status of a current range
 - management tasks on a current range
     - reloading / rebuilding boxes
-    - data reset (clearing indexes)
+    - data reset (clearing indexes, clearing alerts/signals)
     - various troubleshooting steps
 
 <br>
@@ -58,7 +58,7 @@ A "deployment" consists of selecting the nodes (VMs) you want, downloading them,
 
 #### Quick Deployment
 
-A Quick Deployment is the first and fastest option. It enables all VMs included in the range, meaning the control machine, a Windows10 workstation, and a Linux server.
+A Quick Deployment is the first and fastest option. It enables all VMs included in the range, meaning the attack machine, the data collector/SIEM, a Windows10 workstation, and a Linux server.
 
 <br>
 <p align="center">
@@ -85,7 +85,7 @@ A Quick Deployment is the first and fastest option. It enables all VMs included 
 <br>
 #### Custom Deployment
 
-A custom deployment works generally the same way as quick one, but provides you the option to choose what target VMs to deploy alongside the control (ts.elastomic) box. 
+A custom deployment works generally the same way as quick one, but provides you the option to choose what target VMs to deploy alongside the data collector, (ts.elastic) box. 
 
 ##### Example:
 A great usecase for this would be if you're _very_ limited on hardware resources, and you only intend on emulating and detecting threats against a linux server. You have the flexibility to say (N)o to Windows and (Y)es to Linux, which would look like so:
