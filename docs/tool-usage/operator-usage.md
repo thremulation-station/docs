@@ -51,7 +51,7 @@ After a few seconds the agent will connect to Operator and you will receive a no
 
 A number of options can be changed with the Agent such as the communication method, the check-in interval, etc. 
 
-The docs for Operator are within the application itself but a good quickstart guide is also available on their GitHub here: https://github.com/preludeorg/operator-support/blob/master/docs/quickstart.md
+The docs for Operator are within the application itself but a good quickstart guide is also available on their GitHub here: [Operator Docs](https://github.com/preludeorg/operator-support/blob/master/docs/quickstart.md)
 
 ## Demo
 TODO

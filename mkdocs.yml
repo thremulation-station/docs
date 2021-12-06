@@ -77,7 +77,7 @@ nav:
     - Functions Check: quickstart/functions-check.md
   - Tool Usage:
     - Overview: tool-usage/index.md
-    - Caldera Usage: tool-usage/caldera-usage.md
+    - Operator Usage: tool-usage/operator-usage.md
     # - Atomic Usage: tool-usage/atomicredteam.md
   # - Hunting Handbook:
   #   - What is Threat Hunting?: handbook/what-is-threathunting.md
