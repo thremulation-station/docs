@@ -19,6 +19,8 @@ Let's kick the process off by installing the required software for your host pla
 
 <br>
 
+**NOTE: The deployment may or may not work with macOS due to various issues with the ecosystem. Docs will be updated once we feel like it is reliable again. If you are feeling adventerous, try the below steps!**
+
 === "macOS"
       
       We have used macOS for the lion's share of the development and testing of the project (and currently provides the most validated experience).

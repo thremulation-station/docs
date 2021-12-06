@@ -31,18 +31,20 @@ This provides some very valuable information on the status of our local range:
 
 The environment is designed for users to interact with 2 primary interfaces:
 
-- Atomic Redteam - **execute** threats
+- Prelude Operator - **execute** threats
 - Kibana WebUI - **detect** threats
 
 
-### Atomic Red Team
+### Prelude Operator
 
-This adversary emulation toolset is accessed by ssh'ing into the `ts.elastomic` box and starting up a powershell session.
+This adversary emulation toolset is accessed by rdp'ing into the `ts.redops` box and starting up `Operator.appimage` on the Desktop.
 
 1. From the vagrant/ directory:
-    - $ `vagrant ssh ts.elastomic`
-1. Start a powershell session:
-    - $ `pwsh`
+    - $ `vagrant rdp ts.redops`
+1. Start Operator:
+    - $ `cd ~/Desktop` 
+    - $ `./Operator.appimage`
+    - Click `Operator.appimage` and accept the TOS
 
 
 ### Kibana Web Interface

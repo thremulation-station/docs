@@ -1,5 +1,5 @@
 # Overview
-
+(Image below needs updated)
 <br>
 <p align="center">
 <img src="/images/ts-topology2.png">
@@ -25,6 +25,7 @@ This project has many practical use cases, and we're excited to see how it's use
 ## Workflow
 
 Let's look at an overview of the mini-range and demonstrate a basic exercise workflow.
+(Image below needs updated)
 
 <br>
 <br>
@@ -32,10 +33,10 @@ Let's look at an overview of the mini-range and demonstrate a basic exercise wor
 <img src="/images/ts-workflow2.png">
 </p>
 
-1. Access the `ts.elastomic` control box interfaces
+1. Access the `ts.elastic` control box interfaces
 1. Choose your target host (currently windows10 or centos)
 2. Launch either a prebuilt threat tactic / technique or your own custom
-3. Victim machines report back to `ts.elastomic` where artificacts can be observed
+3. Victim machines report back to `ts.elastic` where artificacts can be observed
 
 <br>
 

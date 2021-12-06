@@ -17,7 +17,7 @@ Please create an Issue the proper repository:
 
 ### Community
 
-Please join the [Discord](https://discord.gg/fdNjAbHyHz).
+Please join the [Slack](https://join.slack.com/t/thremulation-station/shared_invite/zt-urwtghsh-GyJp8ENYQgtDQAP0JhcbRw).
 
 ### Email
 
