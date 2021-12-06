@@ -70,7 +70,7 @@ If you want to use PSSession and the agent is not enabled, on either `ts.elastic
 We should see our `ts.windows10` victim show up in our `thremulation range` in Operator. From here we can execute a TTP easily. 
 
 1. Navigate to Editor and search for `PowerSploit Invoke-Mimikatz`
-2. Select `ts.windows10` as our target and click `Deploy`!
+2. Click Deploy and select `ts.windows10`.
 
 <br>
 <p align="center">
