@@ -12,15 +12,26 @@ Now that all VMs are up and running, let's validate that everything is working a
 
 This functions check will demonstrate a general workflow using some of the major tools available, as well as validate that all nodes are communicating corectly.
 
-1. From your terminal run $ `vagrant ssh ts.elastomic` to establish as shell session on the combo logger / attacker box. Your prompt will update to indicate you're connected to the elastomic box.
+1. From your terminal run $ `vagrant rdp ts.redops` to establish an RDP session on the attacker box. Your prompt will update to indicate you're connected to the redops box.
 
-1. Then, enter `pwsh` to drop into a Powershell session. Now it is time to choose what test or attack you would like to run against the remote Windows 10 box. You'll see your prompt change to `PS /home/vagrant> `.
+2. Then run `./Operator.appimage` on the Desktop or run `~/Desktop/Operator.appimage` and accept the TOS. Operator can be used with a paid Pro/Enterprise account but by default will be set up with a Community account. 
 
-1. You can browse the available tests by referencing the [Atomic Redteam Docs](https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/Indexes/Indexes-Markdown/windows-index.md).
+3. You can browse the available Community tests/TTPs as well as everything available to the community by referencing the Community repo here:  [Prelude Community TTPs](https://github.com/preludeorg/community/tree/master/ttps) You can also reference additional TTPs that be added such as Atomic Red Team at [Atomic Redteam Docs](https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/Indexes/Indexes-Markdown/windows-index.md).
 
-1. For this demonstration we will conduct a simple example technique and test. It will use Powershell to download [Mimikatz](https://github.com/gentilkiwi/mimikatz) and then dump credentials on the system. More info about this specific technique and test can be found here:  [T1059.001 TestNumber 1](https://attack.mitre.org/techniques/T1059/001/)
+4. For this demonstration we will conduct a simple example technique and test. It will use Powershell to download [Mimikatz](https://github.com/gentilkiwi/mimikatz) and then dump credentials on the system. More info about this specific technique and test can be found here:  [T1059.001 TestNumber 1](https://attack.mitre.org/techniques/T1059/001/)
 
-1. Before we can run this test ___against the Windows 10 box___ we first need to setup a Powershell Session over SSH to the Windows 10 box.
+1. Before we can run this test ___against the Windows 10 box___ we first need to RDP into the Windows box and start the Pneuma Agent for Operator. We can use `vagrant rdp ts.windows10` or manually RDP in. 
+
+    !!! info "Info"
+    We could have the agent start when the lab is brought up by changing the last line in `download-pneuma-agent.ps1`. But by default, the agent is not running. If it starts by default, Establishing an RDP session or creating a new PSSession in Powershell will work. Details for each below.
+
+### RDP
+
+1. RDP into `ts.windows10` with `vagrant rdp ts.windows10`. 
+2. Navigate to `C:\Pneuma` and double-click `start-pneuma.ps1`
+
+### PSSession (agent started)
+If you want to use PSSession and the agent is enabled, on either `ts.elastic` or `ts.centos`, follow the instructions below. 
 
 1. Create a necessary variable by running the below command. Enter "yes" and the password `vagrant` if prompted:
 
@@ -31,20 +42,42 @@ This functions check will demonstrate a general workflow using some of the major
     !!! info "Info"
         What does this do? We are creating a variable called `$sess` and setting it's value to our new session we just created using the [New-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.1) Powershell cmdlet.
 
-1. Take a moment to look at the syntax we're going to use to launch our "attack" against the remmote target (`ts.windows10`):
+### PSSession (agent not started)
+If you want to use PSSession and the agent is not enabled, on either `ts.elastic` or `ts.centos`, follow these instructions instead.
+
+1. Create a necessary variable by running the below command. Enter "yes" and the password `vagrant` if prompted:
 
     ```powershell
-    Invoke-AtomicTest     # Run Atomic Test
-    T1059.001             # Technique ID
-    -TestNumbers 1        # TestNumber
-    -Session $sess        # Connect using our session variable
+    $sess = New-PSSession -Hostname 192.168.33.11 -Username vagrant
     ```
 
-1. Run the following command to kick things off:
+2. Take a moment to look at the syntax we're going to use to start our session with the remmote target (`ts.windows10`):
 
     ```powershell
-    Invoke-AtomicTest T1059.001 -TestNumbers 1 -Session $sess
+    Invoke-Command     # Invoke cmdlet to start some binary/script
+    -FilePath          # Define where the script lives
+    -Session $sess     # Connect using our session variable
     ```
+
+3. Run the following command to kick things off:
+
+    ```powershell
+    Invoke-Command -FilePath C:\Pneuma\start-pneuma.ps1 -Session $sess
+    ```
+
+### Operator
+
+We should see our `ts.windows10` victim show up in our `thremulation range` in Operator. From here we can execute a TTP easily. 
+
+1. Navigate to Editor and search for `PowerSploit Invoke-Mimikatz`
+2. Select `ts.windows10` as our target and click `Deploy`!
+
+<br>
+<p align="center">
+<img src="../../images/operator-mimi.png">
+</p>
+<br>
+
 
 1. Once this is finished, go back to the Discover tab in Kibana: `http://localhost:5601/app/discover#/`
 
@@ -69,19 +102,10 @@ Clean logs -- clean mind right? While the data in Kibana is separated by the fac
 !!! info "Info"
     The term "target systems" refers to the `ts.windows10` and `ts.centos7` boxes.
 
-Most of (if not all) Atomic Red Team tests come with a cleanup command to clear your target system before executing another test.
-
-1. In order to cleanup our Mimikatz test we can run the same command we used to execute it this time with a `-Cleanup` option at the end.
-
-1. Run the following command to clean house:
-
-    ```powershell
-    Invoke-AtomicTest T1059.001 -TestNumbers 1 -Session $sess -Cleanup
-    ```
 
 #### Attacker / Logger System
 
-The "control" node that is used to perform all attacking and logging operations is the `ts.elatomic` box. We can use the `stationctl` CLI to perform a data reset. This will clear all existing Elasticsearch index data to wipe the slate clean. Station control should be executed from the vagrant/ folder, so ***ensure*** that you're in the right folder: `<THIS-PROJECT-REPO>/vagrant/`.
+The "control" node that is used for logging operations is the `ts.elastic` box. We can use the `stationctl` CLI to perform a data reset. This will clear all existing Elasticsearch index data to wipe the slate clean. Station control should be executed from the vagrant/ folder, so ***ensure*** that you're in the right folder: `<THIS-PROJECT-REPO>/vagrant/`.
 
 1. You can perform a "Clear Data" operation with the following commands:
 
