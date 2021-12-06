@@ -70,7 +70,9 @@ If you want to use PSSession and the agent is not enabled, on either `ts.elastic
 We should see our `ts.windows10` victim show up in our `thremulation range` in Operator. From here we can execute a TTP easily. 
 
 1. Navigate to Editor and search for `PowerSploit Invoke-Mimikatz`
-2. Click Deploy and select `ts.windows10`.
+2. Click `Deploy`
+
+
 
 <br>
 <p align="center">
@@ -78,6 +80,17 @@ We should see our `ts.windows10` victim show up in our `thremulation range` in O
 </p>
 <br>
 
+3. Once you click `Deploy` you should see the following: 
+
+<br>
+<p align="center">
+<img src="../../images/threm-operator-range.png">
+</p>
+<br>
+
+Click `Deploy` once more!
+
+### Kibana
 
 1. Once this is finished, go back to the Discover tab in Kibana: `http://localhost:5601/app/discover#/`
 
