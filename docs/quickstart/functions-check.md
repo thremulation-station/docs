@@ -36,7 +36,7 @@ If you want to use PSSession and the agent is enabled, on either `ts.elastic` or
 1. Create a necessary variable by running the below command. Enter "yes" and the password `vagrant` if prompted:
 
     ```powershell
-    $sess = New-PSSession -Hostname 192.168.33.11 -Username vagrant
+    $sess = New-PSSession -Hostname 192.168.56.11 -Username vagrant
     ```
 
     !!! info "Info"
@@ -48,7 +48,7 @@ If you want to use PSSession and the agent is not enabled, on either `ts.elastic
 1. Create a necessary variable by running the below command. Enter "yes" and the password `vagrant` if prompted:
 
     ```powershell
-    $sess = New-PSSession -Hostname 192.168.33.11 -Username vagrant
+    $sess = New-PSSession -Hostname 192.168.56.11 -Username vagrant
     ```
 
 2. Take a moment to look at the syntax we're going to use to start our session with the remmote target (`ts.windows10`):
